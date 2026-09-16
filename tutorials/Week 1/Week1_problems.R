@@ -18,12 +18,22 @@ y <- c(0, 4, 4, 5, 7, 10)
 
 # (1) find sum of y using the built-in R function
 
+sum(y)
+
 # (2) find mean of y using your "own" function
 # now do the same thing, but faster using the built-in R function
 
+sum(y)/length(y)
+
 # (3) find sum of demeaned values
 
+y - mean(y)
+
 # (4) calculate sum of squared error
+
+deviations <- y - mean(y)
+deviations^2
+squarred_error <- deviations^2
 
 ###########
 # Quantiles
