@@ -54,6 +54,9 @@ summary(df)
 
 # How many observations do we have?
 # HINT: nrow(), or length() of one column.
+
+nrow(df)
+
 # This matters later: a small sample is one reason to use the t distribution.
 
 
@@ -65,12 +68,12 @@ summary(df)
 
 # EXERCISE: Find the mean,standard deviation and standard error
 # of income. Store each one in an object so we can reuse them later.
-mean_income <- 
-sd_income   <- 
-se_income   <- 
 
-mean_income; sd_income; se_income
+mean_income <- mean(df$income)
+sd_income   <- sd(df$income)
+se_income   <- sd(df$income)/ sqrt(length(df$income))
 
+#ANSWERS mean_income = 1860; sd_income = 681.6076 ; se_income = 156.3715
 
 # -------------------------------#
 # 3. Visualizing the Distribution
@@ -78,9 +81,24 @@ mean_income; sd_income; se_income
 
 # EXERCISE: Create a histogram of income, with a title and x-axis label.
 
+hist(df$income,
+     breaks = 20,
+     main = "Monthly Net Income",
+     xlab = "Euro")
+
+## Remember to put all commas in the hist chart creating
+
+### Details about this chart is that due to the small sample size you will not
+### see the variation well in the hist graph
 
 # EXERCISE: Create a density plot of income, with a title and x-axis label.
 # HINT: density() computes the curve, plot() draws it.
+
+plot(density(df$income),
+     breaks = 20,
+     main = "monthly Net Income",
+     xlab = "Euro"
+)
 
 
 
@@ -90,8 +108,12 @@ mean_income; sd_income; se_income
 # Which kind of inferences can we make with regards to the population,
 # based on the sample data, specifically the sample mean and SE?
 
+# ANSWER - It estimates the population which the SE will estimate the SD of the
+# distribtuion 
 
 # Why do we need the standard error?
+# ANSWER - SE will measure the amount of uncertainty (can be tested by p-value and
+# CI)
 
 
 # -------------------------------#
