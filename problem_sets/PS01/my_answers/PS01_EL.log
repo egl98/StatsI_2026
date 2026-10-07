@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.11)  7 OCT 2026 17:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.11)  7 OCT 2026 21:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -854,7 +854,20 @@ Package: listings 2025/11/14 1.11b (Carsten Heinz)
 tex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count361
-) (PS01_EL.aux)
+) (PS01_EL.aux
+
+LaTeX Warning: Label `fig:iq-plot' multiply defined.
+
+
+LaTeX Warning: Label `fig:iq-plot' multiply defined.
+
+
+LaTeX Warning: Label `fig:iq-plot' multiply defined.
+
+
+LaTeX Warning: Label `fig:iq-plot' multiply defined.
+
+)
 \openout1 = `PS01_EL.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
@@ -931,7 +944,7 @@ File: lstlang2.sty 2025/11/14 1.11b listings language file
 File: lstlang3.sty 2025/11/14 1.11b listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 83.
+nput line 76.
 
 (PS01_EL.R
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 3
@@ -943,31 +956,83 @@ File: omlcmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 39.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
+(PS01_EL.R) (PS01_EL.R) (PS01_EL.R) [1
 
-! Package Listings Error: File `PSO1_EL(.R)' not found.
+{C:/Users/erica/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (PS01_EL.R) 
+(PS01_EL.R) (PS01_EL.R) (PS01_EL.R)
+(PS01_EL.R) [2] (PS01_EL.R) [3] (PS01_EL.R) (PS01_EL.R)
+<PS01_EL_Plot1.png, id=61, 611.28375pt x 612.03656pt>
+File: PS01_EL_Plot1.png Graphic file (type png)
+<use PS01_EL_Plot1.png>
+Package pdftex.def Info: PS01_EL_Plot1.png  used on input line 213.
+(pdftex.def)             Requested size: 375.80544pt x 376.26483pt.
+ [4] (PS01_EL.R)
+<PS01_EL_Plot2.png, id=72, 611.28375pt x 612.03656pt>
+File: PS01_EL_Plot2.png Graphic file (type png)
+<use PS01_EL_Plot2.png>
+Package pdftex.def Info: PS01_EL_Plot2.png  used on input line 225.
+(pdftex.def)             Requested size: 375.80544pt x 376.26483pt.
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: R)
+[5 <./PS01_EL_Plot1.png>] (PS01_EL.R)
+<PS01_EL_Plot3.png, id=81, 611.28375pt x 612.03656pt>
+File: PS01_EL_Plot3.png Graphic file (type png)
+<use PS01_EL_Plot3.png>
+Package pdftex.def Info: PS01_EL_Plot3.png  used on input line 237.
+(pdftex.def)             Requested size: 375.80544pt x 376.26483pt.
+ [6 <./PS01_EL_Plot2.png>] (PS01_EL.R)
+(PS01_EL.R)
+<PS01_EL_Plot4.png, id=90, 611.28375pt x 612.03656pt>
+File: PS01_EL_Plot4.png Graphic file (type png)
+<use PS01_EL_Plot4.png>
+Package pdftex.def Info: PS01_EL_Plot4.png  used on input line 254.
+(pdftex.def)             Requested size: 375.80544pt x 376.26483pt.
+ [7 <./PS01_EL_Plot3.png>]
+<PS01_EL_Plot5.png, id=102, 611.28375pt x 612.03656pt>
+File: PS01_EL_Plot5.png Graphic file (type png)
+<use PS01_EL_Plot5.png>
+Package pdftex.def Info: PS01_EL_Plot5.png  used on input line 266.
+(pdftex.def)             Requested size: 375.80544pt x 376.26483pt.
+ [8 <./PS01_EL_Plot4.png>] (PS01_EL.R)
+[9 <./PS01_EL_Plot5.png>] (PS01_EL.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+ ***********
 
-Enter file name: 
-! Emergency stop.
-<read *> 
-         
-l.94 ...e=R, firstline=44, lastline=44]{PSO1_EL.R}
-                                                  ^^M
-*** (cannot \read from terminal in nonstop modes)
 
- 
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `PS01_EL.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+ ) 
 Here is how much of TeX's memory you used:
- 27197 strings out of 467871
- 477194 string characters out of 5418376
- 1079574 words of memory out of 5000000
- 55606 multiletter control sequences out of 15000+600000
- 638160 words of font info for 84 fonts, out of 8000000 for 9000
+ 27349 strings out of 467871
+ 480849 string characters out of 5418376
+ 1151201 words of memory out of 5000000
+ 55660 multiletter control sequences out of 15000+600000
+ 638814 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,6n,104p,3241b,2133s stack positions out of 10000i,1000n,20000p,200000b,200000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ <C:\Users\erica\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
+1200.pk> <C:\Users\erica\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\tcrm1000.pk><C:/Users/erica/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmbx12.pfb><C:/Users/erica/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmmi10.pfb><C:/Users/erica/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/erica/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/erica/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/erica/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/eric
+a/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Use
+rs/erica/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pf
+b><C:/Users/erica/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmtt12.pfb>
+Output written on PS01_EL.pdf (9 pages, 193487 bytes).
+PDF statistics:
+ 179 PDF objects out of 1000 (max. 8388607)
+ 62 named destinations out of 1000 (max. 500000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+

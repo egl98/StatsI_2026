@@ -78,8 +78,7 @@ se_score
 
 # The confidence interval is set at 90%
 
-# Determining the qnorm determines the proportions (with NORMAL distributions)
-# of the p-value 
+# qnorm gives the z-value given proportion of the standard normal distribution
 
 qnorm(0.95)
 qnorm(0.05)
@@ -128,7 +127,7 @@ upper_90
 # T-statistic will be used due to the small population size (i,e 25 data points) and
 # because this is a one-sided test. 
 
-# The test test will look at y (data sampling) and the degrees of freedom. With this
+# The test will look at y (data sampling) and the degrees of freedom. With this
 # we can observe if the we can reject the null hypothesis of HO > 100  through the 
 # p-value outcome.
 
@@ -136,10 +135,7 @@ t.test(y, mu = 100,alternative = "greater") #H0 ~ p-value of 0.7215
 
 t.test(y, mu = 100,alternative = "less") #HA ~ p-value of 0.2785
 
-# FULL ANSWER FOR QUESTION 2: We failed to reject the null at the standard 
-# significance rate of 5% because the p-value is greater than 0.05. Thus we
-# cannot conclude the average IQ of the counselor's school is greater than the country IQ scores.
-
+# FULL ANSWER FOR QUESTION 2:ANSWER FOR QUESTION 2.1: We failed to reject the null at the standard significance rate of 0.05 because the p-value is greater than the standard used. Thus we cannot conclude the average IQ of the counselor's school is greater than the country's IQ scores.
 
 #####################
 # Problem 2
@@ -163,8 +159,7 @@ plot(expenditure$X1, expenditure$Y,
      xlab = "Per capita personal income in state",
      ylab = "Per capita expenditure on shelters/housing assistance") 
 
-# This first plot shows that the higher the capital on shelter and housing assistant
-# The income is raised.
+# This first plot shows that the higher the capital on shelter and housing assistant the income is raised. 
 
 # Second scatter plot between Y + X2
 
@@ -173,8 +168,7 @@ plot(expenditure$X2, expenditure$Y,
      xlab = "Number of residents per 100,000 that are ”financially insecure” in state",
      ylab = "Per capita expenditure on shelters/housing assistance") 
 
-# The second plot shows that the more capital in housing assistance and the financially insecure status.
-# There is a relationship more funds in housing, there are less financially insecure residents. 
+# This second plot shows that there is not a strong corrlation between housing capita and financial insecure. 
 
 
 plot(expenditure$X3, expenditure$Y,
@@ -183,7 +177,9 @@ plot(expenditure$X3, expenditure$Y,
      ylab = "Per capita expenditure on shelters/housing assistance") 
 
 
-# The third plot showcases that that when there is more capita in housing assistance there are more people living in ubran spaces.
+# The third plot showcases that when there is more capita in housing assistance there are more people living in urban spaces.
+
+#Taking all of these into account of all three plots, there is slight correlation that increases in capita expenditure can increase well being in Urban areas.
 
 ##################
 # QUESTION TWO
@@ -194,7 +190,7 @@ plot(expenditure$Region, expenditure$Y,
      xlab =  "Region",
      ylab = "Per capita expenditure on shelters/housing assistance") 
 
-# ANSWER: The region that has the most shelter/housing assistance is region 4, the West.
+# On average the region that has the most shelter/housing assistance is region 4, the West.
 
 #################
 # QUESTION THREE
@@ -211,8 +207,5 @@ ggplot(expenditure, aes(x = X1, y = Y,
        x = "X1", y = "Y") +
   theme_minimal()
 
-# ANSWER: The relationship between Y and X1 shows that the more capital put into 
-# shelter and housing assistance, the income stays around $2000. There is steady growth. When adding 
-# an additional variable of regions you see that region 3 (the south), puts in low capita
-# four housing and shelter and have lower income.
+# The relationship between Y and X1 shows that the more capital put into shelter and housing assistance, the income stays around $2000. There is steady growth. When adding  an additional variable of regions you see that region 3 (the south), puts in low capita for housing and shelter and have lower income.
 

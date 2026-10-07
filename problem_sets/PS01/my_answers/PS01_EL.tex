@@ -61,18 +61,11 @@
 \newtheorem{hyp}{Hypothesis}
 
 \title{Problem Set 1}
-\date{Due: October 8, 2026}
-\author{Applied Stats/Quant Methods 1}
+\author{Erica Lundt}
+\date{October 8, 2026}
 
 \begin{document}
 	\maketitle
-	
-	\section*{Instructions}
-	\begin{itemize}
-	\item Please show your work! You may lose points by simply writing in the answer. If the problem requires you to execute commands in \texttt{R}, please include the code you used to get your answers. Please also include the \texttt{.R} file that contains your code. If you are not sure if work needs to be shown for a particular problem, please ask.
-\item Your homework should be submitted electronically on GitHub.
-\item This problem set is due before 23:59 on Thursday October 8, 2026. No late assignments will be accepted.
-	\end{itemize}
 	
 	\vspace{1cm}
 	\section*{Question 1: Education}
@@ -87,62 +80,94 @@ A school counselor was curious about the average of IQ of the students in her sc
 
 \begin{enumerate}
 	\item Find a 90\% confidence interval for the average student IQ in the school (As a hint, you first need the mean and SD to create a CI):\\
-	\section{Answer For Question 1.1}
 	
-The first determining length which is the number of values that we have in this data set. 
+	
+	\section*{Answers For Question 1.1}
+	
+First, determining length which is the number of values that we have in this data set. 
 
-	\lstinputlisting[language=R, firstline=44, lastline=44]{PSO1_EL.R} 
+\lstinputlisting[language=R, firstline=44, lastline=44, breaklines=true]{PS01_EL.R}
 
 \textit{ANSWER FOR THE LENGTH OF Y IS: 25}
 
 The second is to determine the mean of sample the scores. 
 
-	\lstinputlisting[language=R, firstline=50, lastline=52]{PSO1_EL.R} 
+\lstinputlisting[language=R, firstline=50, lastline=52, breaklines=true]{PS01_EL.R}
  
  \textit{ANSWER OF MEAN SCORE FOR THE SCORES:98.44}
  
  The third is to determine the standard deviation of the scores.
  
-	\lstinputlisting[language=R, firstline=59, lastline=61]{PSO1_EL.R}
+\lstinputlisting[language=R, firstline=59, lastline=62, breaklines=true]{PS01_EL.R}
 
  \textit{ANSWER OF SD SCORE FOR THE SCORES: 13.09287}
  
 	I have calculated the  length, mean and SD. In order to determine the 
 	confidence interval, the standard error will also have to be calculated.
  
- 	\lstinputlisting[language=R, firstline=68, lastline=70]{PSO1_EL.R}
+ \lstinputlisting[language=R, firstline=68, lastline=70, breaklines=true]{PS01_EL.R}
  	
 \textit{ANSWER FOR THE STANDARD ERROR SCORES: 2.618575 }
  
-Now having together the length, mean, standard deviation, and the standard error we can now calculate the confidence interval at 90%
+Now having together the length, mean, standard deviation, and the standard error we can now calculate the confidence interval at 90\%
  
- CI = mean +/- critical value * SE
- 
-The confidence interval is set at 90%
- 
- Determining the qnorm determines the proportions (with NORMAL distributions) of the p-value 
- 
-	\lstinputlisting[language=R, firstline=84, lastline=85]{PSO1_EL.R}
+\textbf{\underline{ CI = mean +/- critical value * SE
+ }}
 	
+	
+ 
+	qnorm gives the z-value given proportion of the standard normal distribution
+ 
+ 
+ 
+\lstinputlisting[language=R, firstline=83, lastline=83, breaklines=true]{PS01_EL.R}
 	\textit{ANSWER TO THE UPPER QNORM IS:  1.644854}
+\lstinputlisting[language=R, firstline=84, lastline=84, breaklines=true]{PS01_EL.R}	
 	\textit{ANSWER TO THE LOWER QNORM IS: -1.644854}
  
- Calculating the CI
+\underline{ Calculating the CI}
  
- 	\lstinputlisting[language=R, firstline=92, lastline=98]{PSO1_EL.R}
- 	\lstinputlisting[language=R, firstline=99, lastline=99]{PSO1_EL.R}
+ \lstinputlisting[language=R, firstline=91, lastline=93, breaklines=true]{PS01_EL.R}
  	\textit{ANSWER FOR THE LOWER TAIL: 94.13283}
- 	\lstinputlisting[language=R, firstline=101, lastline=101]{PSO1_EL.R}
+ \lstinputlisting[language=R, firstline=95, lastline=97, breaklines=true]{PS01_EL.R}
  	\textit{ANSWER FOR THE UPPER TAIL: 102.7472}
  	
- 	Final Answer for Question 1.1: At the condidance level of 90%
- 	the upper score average is approximetley 103. While the lower average 
- 	of the IQ score is 84.
+ \textbf{	Final Answer for Question 1.1: At the CI level of 90 percent,
+ 	the upper score average is approximately 103. While the lower average 
+ 	of the IQ score is 94.}
  
 	\item Next, the school counselor was curious  whether  the average student IQ in her school is higher than the average IQ score (100) among all the schools in the country.\\ 
-	
 	\noindent Using the same sample, conduct the appropriate hypothesis test with $\alpha=0.05$.
 	
+	\section*{Answers For Question 1.2}
+	
+Hypothesis testing will begin with two statements:
+
+\textbf{Null hypothesis is:} the average student's IQ is higher than 100 among all
+
+schools in the country.
+
+ HO greater 100
+
+\textbf{Alternative hypothesis is:} the average student's IQ is not higher than 100 
+among all schools in the country.
+
+ HA less than 100
+
+This will be at one-sided test because we are looking at if something is or is not the value of the null. 
+
+The test statistic is calculated to determine the how far the estimate is from the null hypothesis. 
+
+\underline{\textbf{Test = estimate - null value / SE}}
+
+T-statistic will be used due to the small population size (i.e 25 data points) and because this is a one-sided test. 
+
+The test  will look at y (data sampling) and the degrees of freedom. With this we can observe if the we can reject the null hypothesis of HO greater than 100  through the p-value outcome.	
+
+\lstinputlisting[language=R, firstline=135, lastline=137, breaklines=true]{PS01_EL.R}
+
+\textbf{Final Answer for 1.2: We failed to reject the null at the standard significance rate of 0.05 because the p-value is greater than the standard used. Thus, we cannot conclude the average IQ of the counselor's school is greater than the country's IQ scores.}
+
 \end{enumerate}
 
 \newpage
@@ -165,7 +190,7 @@ The confidence interval is set at 90%
 \vspace{.5cm}
 \noindent Explore the \texttt{expenditure} data set and import data into \texttt{R}.
 \vspace{.5cm}
-\lstinputlisting[language=R, firstline=42, lastline=42]{PS01.R}  
+ \lstinputlisting[language=R, firstline=148, lastline=148, breaklines=true]{PS01_EL.R}  
 \vspace{.5cm}
 \begin{itemize}
 
@@ -173,11 +198,76 @@ The confidence interval is set at 90%
 Please plot the relationships among \emph{Y}, \emph{X1}, \emph{X2}, and \emph{X3}? What are the correlations among them (you just need to describe the graph and the relationships among them)?
 \vspace{.5cm}
 \item
+
+\section*{Answers For Question 2.1}
+
+
+\textit{I did not know how to plot all these variables together. I did individual plots in order to answer the question. }
+
+First Scatter plot between Y + X1
+
+\lstinputlisting[language=R, firstline=162, lastline=162, breaklines=true]{PS01_EL.R}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{PS01_EL_Plot1.png}
+	\caption{Housing Assistance and Income.}
+	\label{fig:iq-plot}
+\end{figure}
+
+
+Second Scatter plot between Y + X2
+
+\lstinputlisting[language=R, firstline=171, lastline=171, breaklines=true]{PS01_EL.R}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{PS01_EL_Plot2.png}
+	\caption{Housing Assistance and Financially Insecure.}
+	\label{fig:iq-plot}
+\end{figure}
+
+
+Third Scatter plot between Y + X3
+
+\lstinputlisting[language=R, firstline=180, lastline=180, breaklines=true]{PS01_EL.R}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{PS01_EL_Plot3.png}
+	\caption{Housing Assistance and Urban Living.}
+	\label{fig:iq-plot}
+\end{figure}
+
+Assessment o f all Plots:
+
+\lstinputlisting[language=R, firstline=182, lastline=182, breaklines=true]{PS01_EL.R}
+
+\section*{Answers For Question 2.2}
+
 Please plot the relationship between \emph{Y} and \emph{Region}? On average, which region has the highest per capita expenditure on housing assistance?
+
+\lstinputlisting[language=R, firstline=193, lastline=193, breaklines=true]{PS01_EL.R}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{PS01_EL_Plot4.png}
+	\caption{Housing Assistance and Region.}
+	\label{fig:iq-plot}
+\end{figure}
+
 \vspace{.5cm}
 \item
 Please plot the relationship between \emph{Y} and \emph{X1}? Describe this graph and the relationship. Reproduce the above graph including one more variable \emph{Region} and display different regions with different types of symbols and colors.
 \end{itemize}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{PS01_EL_Plot5.png}
+	\caption{Housing Assistance and Region Part 2.}
+	\label{fig:iq-plot}
+\end{figure}
+
+\lstinputlisting[language=R, firstline=210, lastline=210, breaklines=true]{PS01_EL.R}
 
 \end{document}
