@@ -151,33 +151,7 @@ head(expenditure)
 # QUESTION ONE 
 ####################
 
-
-# First scatter plot between Y + X1
-   
-plot(expenditure$X1, expenditure$Y,
-     main = "Per capita expenditure on shelters/housing assistance vs. income",
-     xlab = "Per capita personal income in state",
-     ylab = "Per capita expenditure on shelters/housing assistance") 
-
-# This first plot shows that the higher the capital on shelter and housing assistant the income is raised. 
-
-# Second scatter plot between Y + X2
-
-plot(expenditure$X2, expenditure$Y,
-     main = "Per capita expenditure on shelters/housing assistance vs. Financially insecure",
-     xlab = "Number of residents per 100,000 that are ”financially insecure” in state",
-     ylab = "Per capita expenditure on shelters/housing assistance") 
-
-# This second plot shows that there is not a strong corrlation between housing capita and financial insecure. 
-
-
-plot(expenditure$X3, expenditure$Y,
-     main = "Per capita expenditure on shelters/housing assistance vs. Ubran Living",
-     xlab = "Number of people per thousand residing in urban areas in state",
-     ylab = "Per capita expenditure on shelters/housing assistance") 
-
-
-# The third plot showcases that when there is more capita in housing assistance there are more people living in urban spaces.
+pairs(expenditure[, c("Y", "X1", "X2", "X3")], col = expenditure$Region)
 
 #Taking all of these into account of all three plots, there is slight correlation that increases in capita expenditure can increase well being in Urban areas.
 
@@ -185,10 +159,11 @@ plot(expenditure$X3, expenditure$Y,
 # QUESTION TWO
 ##################
 
-plot(expenditure$Region, expenditure$Y,
-     main = "Per capita expenditure on shelters/housing assistance vs. Region",
-     xlab =  "Region",
-     ylab = "Per capita expenditure on shelters/housing assistance") 
+boxplot(Y ~ Region, data = expenditure,
+        main = "Per capita expenditure on shelters/housing assistance by Region",
+        xlab = "Region",
+        ylab = "Per capita expenditure on shelters/housing assistance",
+        col = "lightblue")
 
 # On average the region that has the most shelter/housing assistance is region 4, the West.
 
@@ -196,7 +171,14 @@ plot(expenditure$Region, expenditure$Y,
 # QUESTION THREE
 ################
 
+
 library(ggplot2)
+
+ggplot(expenditure, aes(x = X1, y = Y)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+
+#Plot 2 with regions 
 
 ggplot(expenditure, aes(x = X1, y = Y,
                         color = factor(Region),

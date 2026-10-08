@@ -164,7 +164,7 @@ T-statistic will be used due to the small population size (i.e 25 data points) a
 
 The test  will look at y (data sampling) and the degrees of freedom. With this we can observe if the we can reject the null hypothesis of HO greater than 100  through the p-value outcome.	
 
-\lstinputlisting[language=R, firstline=135, lastline=137, breaklines=true]{PS01_EL.R}
+\lstinputlisting[language=R, firstline=134, lastline=136, breaklines=true]{PS01_EL.R}
 
 \textbf{Final Answer for 1.2: We failed to reject the null at the standard significance rate of 0.05 because the p-value is greater than the standard used. Thus, we cannot conclude the average IQ of the counselor's school is greater than the country's IQ scores.}
 
@@ -201,57 +201,27 @@ Please plot the relationships among \emph{Y}, \emph{X1}, \emph{X2}, and \emph{X3
 
 \section*{Answers For Question 2.1}
 
-
-\textit{I did not know how to plot all these variables together. I did individual plots in order to answer the question. }
-
-First Scatter plot between Y + X1
-
-\lstinputlisting[language=R, firstline=162, lastline=162, breaklines=true]{PS01_EL.R}
-
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{PS01_EL_Plot1.png}
-	\caption{Housing Assistance and Income.}
+	\includegraphics[width=0.8\textwidth]{PS01_EL_Plot6.png}
+	\caption{Housing Assistance and Income, Finance,  and Region.}
 	\label{fig:iq-plot}
 \end{figure}
 
 
-Second Scatter plot between Y + X2
+Assessment of all Plots:
 
-\lstinputlisting[language=R, firstline=171, lastline=171, breaklines=true]{PS01_EL.R}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\textwidth]{PS01_EL_Plot2.png}
-	\caption{Housing Assistance and Financially Insecure.}
-	\label{fig:iq-plot}
-\end{figure}
-
-
-Third Scatter plot between Y + X3
-
-\lstinputlisting[language=R, firstline=180, lastline=180, breaklines=true]{PS01_EL.R}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\textwidth]{PS01_EL_Plot3.png}
-	\caption{Housing Assistance and Urban Living.}
-	\label{fig:iq-plot}
-\end{figure}
-
-Assessment o f all Plots:
-
-\lstinputlisting[language=R, firstline=182, lastline=182, breaklines=true]{PS01_EL.R}
+\lstinputlisting[language=R, firstline=156, lastline=156, breaklines=true]{PS01_EL.R}
 
 \section*{Answers For Question 2.2}
 
 Please plot the relationship between \emph{Y} and \emph{Region}? On average, which region has the highest per capita expenditure on housing assistance?
 
-\lstinputlisting[language=R, firstline=193, lastline=193, breaklines=true]{PS01_EL.R}
+\lstinputlisting[language=R, firstline=168, lastline=168, breaklines=true]{PS01_EL.R}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{PS01_EL_Plot4.png}
+	\includegraphics[width=0.8\textwidth]{PS01_EL_Plot7.png}
 	\caption{Housing Assistance and Region.}
 	\label{fig:iq-plot}
 \end{figure}
@@ -261,6 +231,14 @@ Please plot the relationship between \emph{Y} and \emph{Region}? On average, whi
 Please plot the relationship between \emph{Y} and \emph{X1}? Describe this graph and the relationship. Reproduce the above graph including one more variable \emph{Region} and display different regions with different types of symbols and colors.
 \end{itemize}
 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{PS01_EL_Plot8.png}
+	\caption{Housing Assistance and Region}
+	\label{fig:iq-plot}
+\end{figure}
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{PS01_EL_Plot5.png}
@@ -268,6 +246,6 @@ Please plot the relationship between \emph{Y} and \emph{X1}? Describe this graph
 	\label{fig:iq-plot}
 \end{figure}
 
-\lstinputlisting[language=R, firstline=210, lastline=210, breaklines=true]{PS01_EL.R}
+\lstinputlisting[language=R, firstline=192, lastline=192, breaklines=true]{PS01_EL.R}
 
 \end{document}
