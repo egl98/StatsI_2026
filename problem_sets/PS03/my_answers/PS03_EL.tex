@@ -61,9 +61,7 @@
 \newtheorem{hyp}{Hypothesis}
 
 \title{Problem Set 3}
-\date{Due: November 12, 2026}
-\author{Applied Stats/Quant Methods 1}
-
+\author{Erica Lundt}
 
 \begin{document}
 	\maketitle
@@ -84,10 +82,42 @@
 \vspace{.25cm}
 \noindent We are interested in knowing how the difference in campaign spending between incumbent and challenger affects the incumbent's vote share. 
 	\begin{enumerate}
-		\item Run a regression where the outcome variable is \texttt{voteshare} and the explanatory variable is \texttt{difflog}.	\vspace{5cm}
-		\item Make a scatterplot of the two variables and add the regression line. 	\vspace{7cm}
-		\item Save the residuals of the model in a separate object.	\vspace{7cm}
+		\item Run a regression where the outcome variable is \texttt{voteshare} and the explanatory variable is \texttt{difflog}.
+			\lstinputlisting[language=R, firstline=43, lastline=44, breaklines=true]{PS03_EL.R}	
+			
+			
+		 \textit\textbf{{\textbf{EXPLANATION OF REGRESSION}: Holding all things constant, on average for every unit increase in difference in campaign spending, the incumbent and challenger's vote share increases by .042. 	} }
+		
+		\item Make a scatterplot of the two variables and add the regression line. 
+		\lstinputlisting[language=R, firstline=48, lastline=53, breaklines=true]{PS03_EL.R}	
+		
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{Plot1_EL.png}
+		\caption{Incumbent Vote Share vs Spending.}
+		\label{fig:iq-plot}
+	\end{figure}
+		
+		\item Save the residuals of the model in a separate object.
+		
+		\lstinputlisting[language=R, firstline=55, lastline=63, breaklines=true]{PS03_EL.R}
+		
+	\begin{table}[!htbp] \centering 
+		\caption{Summary of Residuals} 
+		\label{} 
+		\begin{tabular}{@{\extracolsep{5pt}}lccccc} 
+			\\[-1.8ex]\hline 
+			\hline \\[-1.8ex] 
+			Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\ 
+			\hline \\[-1.8ex] 
+			Residuals & 3,193 & $-$0.0000 & 0.0787 & $-$0.2683 & 0.3275 \\ 
+			\hline \\[-1.8ex] 
+		\end{tabular} 
+	\end{table} 
+	
 		\item Write the prediction equation.
+		
+		\ \textit\textbf{{\textbf{ANSWER}: voteshare = 0.58 + 0.042 * difflog 	} }
 	\end{enumerate}
 	
 \newpage
@@ -95,10 +125,45 @@
 \section*{Question 2}
 \noindent We are interested in knowing how the difference between incumbent and challenger's spending and the vote share of the presidential candidate of the incumbent's party are related.	\vspace{.25cm}
 	\begin{enumerate}
-		\item Run a regression where the outcome variable is \texttt{presvote} and the explanatory variable is \texttt{difflog}.	\vspace{5cm}
-		\item Make a scatterplot of the two variables and add the regression line. 	\vspace{5cm}
-		\item Save the residuals of the model in a separate object.	\vspace{5cm}
+		\item Run a regression where the outcome variable is \texttt{presvote} and the explanatory variable is \texttt{difflog}.
+		\lstinputlisting[language=R, firstline=69, lastline=70, breaklines=true]{PS03_EL.R}	
+		
+		\textit\textbf{{\textbf{EXPLANATION OF REGRESSION}: Holding all things constant, on average for every unit increase in difference in campaign spending, the presidential candidate vote share for the incumbent's party increases by .023. 
+			} }
+		
+		
+		\item Make a scatterplot of the two variables and add the regression line. 	
+		
+		\lstinputlisting[language=R, firstline=75, lastline=80, breaklines=true]{PS03_EL.R}	
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\textwidth]{Plot2_EL.png}
+			\caption{President Incumbent Party vs Spending.}
+			\label{fig:iq-plot}
+		\end{figure}
+		
+		
+		\item Save the residuals of the model in a separate object.	
+			\begin{table}[!htbp] \centering 
+			\caption{Summary of Residuals} 
+			\label{} 
+			\begin{tabular}{@{\extracolsep{5pt}}lccccc} 
+				\\[-1.8ex]\hline 
+				\hline \\[-1.8ex] 
+				Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\ 
+				\hline \\[-1.8ex] 
+				Residuals & 3,193 & 0.0000 & 0.1104 & $-$0.3220 & 0.4274 \\ 
+				\hline \\[-1.8ex] 
+			\end{tabular} 
+		\end{table} 
+		
+		\lstinputlisting[language=R, firstline=83, lastline=89, breaklines=true]{PS03_EL.R}	
+		
+		
 		\item Write the prediction equation.
+		
+		\ \textit\textbf{{\textbf{ANSWER}: voteshare = -0.21 + .023 * presvote	} }
 	\end{enumerate}
 	
 	\newpage	
@@ -108,10 +173,28 @@
 	\vspace{.25cm}
 	\begin{enumerate}
 		\item Run a regression where the outcome variable is \texttt{voteshare} and the explanatory variable is \texttt{presvote}.
-			\vspace{5cm}
+				\lstinputlisting[language=R, firstline=96, lastline=97, breaklines=true]{PS03_EL.R}	
+			
+			\textit\textbf{{\textbf{EXPLANATION OF REGRESSION}: Holding all things constant, on average for every unit increase of the vote share, the presidential candidate vote share for the incumbent's party increases by .38
+					
+			} }
+			
+			
 		\item Make a scatterplot of the two variables and add the regression line. 
-			\vspace{5cm}
+		
+		\lstinputlisting[language=R, firstline=101, lastline=106, breaklines=true]{PS03_EL.R}
+		
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{Plot3_EL.png}
+		\caption{Incumbent Vote Share vs President Incumbent Party.}
+		\label{fig:iq-plot}
+	\end{figure}
+		
 		\item Write the prediction equation.
+		
+				\ \textit\textbf{{\textbf{ANSWER}: voteshare = .044 + .38 * voteshare	} }
+		
 	\end{enumerate}
 	
 
@@ -119,9 +202,21 @@
 \section*{Question 4}
 \noindent The residuals from part (a) tell us how much of the variation in \texttt{voteshare} is $not$ explained by the difference in spending between incumbent and challenger. The residuals in part (b) tell us how much of the variation in \texttt{presvote} is $not$ explained by the difference in spending between incumbent and challenger in the district.
 	\begin{enumerate}
-		\item Run a regression where the outcome variable is the residuals from Question 1 and the explanatory variable is the residuals from Question 2.	\vspace{6cm}
-		\item Make a scatterplot of the two residuals and add the regression line. 	\vspace{6cm}
+		\item Run a regression where the outcome variable is the residuals from Question 1 and the explanatory variable is the residuals from Question 2.
+		
+			\lstinputlisting[language=R, firstline=117, lastline=118, breaklines=true]{PS03_EL.R}
+			
+		\item Make a scatterplot of the two residuals and add the regression line.
+			\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\textwidth]{Plot4_EL.png}
+			\caption{Res 1 vs Res2}
+			\label{fig:iq-plot}
+		\end{figure}
+		
 		\item Write the prediction equation.
+		\textit\textbf{{\textbf{ANSWER}: voteshare = -6.5 + -6.1 X res 1	} }
+		
 	\end{enumerate}
 	
 	\newpage	
@@ -129,9 +224,16 @@
 \section*{Question 5}
 \noindent What if the incumbent's vote share is affected by both the president's popularity and the difference in spending between incumbent and challenger? 
 	\begin{enumerate}
-		\item Run a regression where the outcome variable is the incumbent's \texttt{voteshare} and the explanatory variables are \texttt{difflog} and \texttt{presvote}.	\vspace{5cm}
-		\item Write the prediction equation.	\vspace{5cm}
+		\item Run a regression where the outcome variable is the incumbent's \texttt{voteshare} and the explanatory variables are \texttt{difflog} and \texttt{presvote}.
+		
+			\lstinputlisting[language=R, firstline=133, lastline=134, breaklines=true]{PS03_EL.R}
+		
+		\item Write the prediction equation.
+	\textit\textbf{{\textbf{ANSWER}: voteshare = .44 +.035 X difflog + .25 X presvote	} }
 		\item What is it in this output that is identical to the output in Question 4? Why do you think this is the case?
+			\textit\textbf{{\textbf{ANSWER}:The residuals for the outputs of questions 4 and 5 are identical. I believe this is because regressing one set of residuals on another isolates the variation that remains unexplained by the other variables. When additional variables are added to the regression, they account for that remaining variation, so the residuals end up the same	} }
+		
+		
 	\end{enumerate}
 
 
