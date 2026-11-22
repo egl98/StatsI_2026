@@ -164,6 +164,7 @@ summary(model1)
 
 # What is the prediction equation?
 # Your answer here
+# euro skeptism = 4.85 - 0.042 * years of education 
 
 # Categorical independent variable (manually)
 
