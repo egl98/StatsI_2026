@@ -29,6 +29,3 @@ lapply(c("car"),  pkgTest)
 
 # set wd for current folder
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-
-install.packages("car")
-library(car)
